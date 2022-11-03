@@ -1,0 +1,42 @@
+@import "./bootstrapOverrides.scss";
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+:root {
+  font-size: calc(0.625em + 0.4vw)
+}
+
+body {
+  background: linear-gradient(90deg, $primary, $primary min(33%, 26rem), #FFF0 min(33%, 26rem)), 
+              url(../img/Coding-Challenge-Image.png);
+  background-size: cover;
+  min-height: 100vh;
+}
+
+
+.serif {
+  font-family: 'Playfair Display', 'Times New Roman', Times, serif
+}
+
+.sans-serif {
+  font-family: Arial, Helvetica, sans-serif
+}
+
+.fading-border {
+  &::after {
+    content: "";
+    height: 2px;
+    background: linear-gradient(to right, $primary, rgba(0,0,0,0));
+    display: block;
+    margin-bottom: 1.25rem;
+    margin-top: 1.25rem;
+  }
+}
+
+.text-block {
+  max-width: 50ch;
+}
+
+.btn-primary--gradient {
+  background: linear-gradient(90deg, $primary, #A36754);
+}
