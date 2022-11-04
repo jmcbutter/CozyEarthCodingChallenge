@@ -1,42 +1,70 @@
-function changeClasses(x) {
-  let title = document.getElementById("title");
-  let detailsBox = document.getElementById("more-details");
-  let moreInfoButton = document.getElementById("more-button");
-  let moreInfoButtonText = moreInfoButton.querySelector("p");
-  let social = document.getElementById("social");
+const elements = (function Elements() {
+  const title = {
+    id: "title",
+    "smallClasses": ["start-0", "end-0", "mx-auto", "text-center", "translate-middle-y"],
+    "largeClasses": ["start-9"]
+  }
 
 
-  if (x.matches) { // If media query matches
-    title.classList.remove("start-9");
-    title.classList.add("start-0", "end-0", "mx-auto", "text-center", "translate-middle-y")
+  const detailBox = {
+    id: "detail-box",
+    "smallClasses": ["start-0", "end-0", "mx-auto"],
+    "largeClasses": ["start-9"]
+  };
 
-    detailsBox.classList.remove("start-9");
-    detailsBox.classList.add("start-0", "end-0", "mx-auto")
+  const moreButton = {
+    id: "more-button",
+    "smallClasses": ["d-flex", "justify-content-center"],
+    "largeClasses": ["mx-5", "translate-middle-y"]
+  }
 
-    moreInfoButton.classList.remove("mx-5", "translate-middle-y");
-    moreInfoButton.classList.add("d-flex", "justify-content-center");
+  const moreButtonText = {
+    id: "more-button-text",
+    "smallClasses": ["d-none"]
+  }
 
-    moreInfoButtonText.classList.add("d-none");
+  const social = {
+    id: "social",
+    "smallClasses": ["flex-row", "start-0", "mx-auto", "justify-content-center"],
+    "largeClasses": ["flex-column"]
+  }
 
-    social.classList.remove("flex-column");
-    social.classList.add("flex-row", "start-0", "mx-auto", "justify-content-center");
-  } else {
-    title.classList.remove("start-0", "end-0", "mx-auto", "text-center", "translate-middle-y");
-    title.classList.add("start-9");
+  return [title, detailBox, moreButton, moreButtonText, social];
+})();
 
-    detailsBox.classList.add("start-9");
-    detailsBox.classList.remove("start-0", "end-0", "mx-auto");
-
-    moreInfoButton.classList.remove("d-flex", "justify-content-center");
-    moreInfoButton.classList.add("mx-5", "translate-middle-y")
-
-    moreInfoButtonText.classList.remove("d-none");
-  
-    social.classList.remove("flex-row", "start-0", "mx-auto", "justify-content-center");
-    social.classList.add("flex-column");
+function watchClasses(smallMediaQuery) {
+  if (smallMediaQuery.matches) { // If media query matches
+    elements.forEach(element => swapClasses(element, "small"))
+  } else { 
+    elements.forEach(element => swapClasses(element, "large"))
   }
 }
 
-var x = window.matchMedia("(max-width: 992px)")
-changeClasses(x) // Call listener function at run time
-x.addEventListener("change", changeClasses) // Attach listener function on state changes
+function swapClasses(element, screenSize) {
+  const {id, smallClasses, largeClasses} = element;
+  const el = document.getElementById(id);
+
+  if (screenSize == "small") {
+    addClasses(smallClasses);
+    removeClasses(largeClasses);
+  } else {
+    addClasses(largeClasses);
+    removeClasses(smallClasses);
+  }
+
+  function addClasses(classes) {
+    if (classes) {
+      el.classList.add(...classes);
+    }
+  }
+
+  function removeClasses(classes) {
+    if (classes) {
+      el.classList.remove(...classes);
+    }
+  }
+}
+
+var smallMediaQuery = window.matchMedia("(max-width: 991px)")
+watchClasses(smallMediaQuery) // Call listener function at run time
+smallMediaQuery.addEventListener("change", watchClasses) // Attach listener function on state changes
