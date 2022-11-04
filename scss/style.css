@@ -12609,8 +12609,8 @@ textarea.form-control-lg {
 }
 
 body {
-  background: linear-gradient(90deg, rgba(97, 24, 24, 0.9), rgba(97, 24, 24, 0.1)), -webkit-image-set(url(../img/Coding-Challenge-Image-sm.png) 1x, url(../img/Coding-Challenge-Image-compressed.png) 2x);
-  background: linear-gradient(90deg, rgba(97, 24, 24, 0.9), rgba(97, 24, 24, 0.1)), image-set(url(../img/Coding-Challenge-Image-sm.png) 1x, url(../img/Coding-Challenge-Image-compressed.png) 2x);
+  background: linear-gradient(90deg, rgba(97, 24, 24, 0.9), rgba(97, 24, 24, 0.1)), -webkit-image-set(url(../img/Coding-Challenge-Image-x1.png) 1x, url(../img/Coding-Challenge-Image-x2.png) 2x);
+  background: linear-gradient(90deg, rgba(97, 24, 24, 0.9), rgba(97, 24, 24, 0.1)), image-set(url(../img/Coding-Challenge-Image-x1.png) 1x, url(../img/Coding-Challenge-Image-x2.png) 2x);
   background-size: cover;
   height: 100vh;
 }
@@ -12646,8 +12646,8 @@ body {
 
 @media (min-width: 992px) {
   body {
-    background: linear-gradient(90deg, #611818, #611818 min(34%, 27rem), rgba(255, 255, 255, 0) min(33%, 27rem)), -webkit-image-set(url(../img/Coding-Challenge-Image-sm.png) 1x, url(../img/Coding-Challenge-Image-compressed.png) 2x);
-    background: linear-gradient(90deg, #611818, #611818 min(34%, 27rem), rgba(255, 255, 255, 0) min(33%, 27rem)), image-set(url(../img/Coding-Challenge-Image-sm.png) 1x, url(../img/Coding-Challenge-Image-compressed.png) 2x);
+    background: linear-gradient(90deg, #611818, #611818 min(34%, 27rem), rgba(255, 255, 255, 0) min(33%, 27rem)), -webkit-image-set(url(../img/Coding-Challenge-Image-x1.png) 1x, url(../img/Coding-Challenge-Image-x2.png) 2x);
+    background: linear-gradient(90deg, #611818, #611818 min(34%, 27rem), rgba(255, 255, 255, 0) min(33%, 27rem)), image-set(url(../img/Coding-Challenge-Image-x1.png) 1x, url(../img/Coding-Challenge-Image-x2.png) 2x);
     background-size: cover;
   }
 }

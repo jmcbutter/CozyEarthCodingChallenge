@@ -19,8 +19,8 @@
 
 ### Links
 
-- Solution URL: [Github Repo](https://github.com/jmcbutter/landing-page)
-- Live Site URL: [Github Pages](https://jmcbutter.github.io/landing-page/dist/index.html)
+- Solution URL: [Github Repo](https://github.com/jmcbutter/CozyEarthCodingChallenge)
+- Live Site URL: [Github Pages](https://jmcbutter.github.io/CozyEarthCodingChallenge/)
 
 ## My process
 
@@ -79,10 +79,10 @@ One other interesting thing I found was `image-set()`, a CSS property that helps
 to improve performance by serving different images based on pixel density
 
 ```css
-  background: linear-gradient(90deg, rgba($primary, 0.8), rgba($primary, 0.1)),
-              -webkit-image-set(
-                  url(../img/Coding-Challenge-Image.png) 1x,
-                  url(../img/Coding-Challenge-Image.png) 2x);;
+  background: linear-gradient(90deg, rgba($primary, 0.9), rgba($primary, 0.1)),
+              image-set(
+                url(../img/Coding-Challenge-Image-x1.png) 1x,
+                url(../img/Coding-Challenge-Image-x2.png) 2x);
 ```
 
 ## Author
