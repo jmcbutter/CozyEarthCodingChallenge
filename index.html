@@ -9,63 +9,78 @@
   </head>
   <body>
     <div id="animation-card" class=""></div>
-    <main>
-      
-      <div id="title" class="position-absolute top-50 start-9">
-        <h1 class="m-0 display-1 text-light serif">Explore</h1>
-        <div id="more-button" class="container w-auto mx-5 translate-middle-y">
-          <button
-            class="btn d-flex align-items-center gap-3"
+
+    <main
+      class="grid grid-r4 grid-c4 h-100 text-light align-items-center"
+    >
+      <div class="row r-1 c-1 r-s4 h-100 w-100 d-none d-lg-flex">
+        <div class="col bg-primary"></div>
+      </div>
+
+      <div class="row r-2 r-s2 c-1 c-lg-2 c-se align-self-lg-end text-center text-lg-start">
+        <div id="title" class="align-self-end col p-0 display-1 position-relative ch-shift-left-2 text-light">
+          <h1 class="display-1 serif">Explore</h1>
+          <div
+            id="more-button"
+            class="mx-lg-5 my-lg-n4"
           >
-            <img src="./img/Plus.svg" />
-            <p id="more-button-text" class="m-0 text-light">More Details</p>
+            <button class="btn d-flex align-items-center gap-3 w-100 justify-content-center justify-content-lg-start">
+              <img src="./img/Plus.svg" />
+              <p id="more-button-text" class="m-0 text-light d-none d-lg-block">More Details</p>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row r-2 r-s2 c-1 c-se c-lg-s2 align-self-center align-items-center justify-content-center">
+        <div id="detail-box" class="content bg-light pt-7 pb-7 ps-6 pe-5 position-relative  d-none">
+          <h1 class="serif display-3 text-primary fading-border d-inline-block">
+            Explore
+          </h1>
+          <button
+            id="close-button"
+            class="btn fs-1 position-absolute top-0 end-0 me-3 text-primary"
+          >
+            &times
+          </button>
+          <p class="text-block fs-7 lh-lg text-dark">
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+            quae ab illo inventore veritatis et quasi architecto beatae vitae
+            dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
+            aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
+            eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
+            qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
+            sed quia non numquam eius modi tempora incidunt ut labore et dolore
+            magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis
+            nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
+            aliquid ex ea commodi consequatur?
+          </p>
+          <button
+            class="btn btn-primary btn-primary--gradient px-5 py-2 sans-serif mt-3 rounded-0 fs-5 border-0 text-uppercase"
+          >
+            Read More
           </button>
         </div>
       </div>
 
-      <div id="detail-box" class="d-none content bg-light pt-7 pb-7 ps-6 pe-5 position-absolute top-50 start-9 translate-middle-y">
-        <h1 class="serif display-3 text-primary fading-border d-inline-block">
-          Explore
-        </h1>
-        <button
-          id="close-button"
-          class="btn fs-1 position-absolute top-0 end-0 me-3 text-primary"
-        >
-          &times
-        </button>
-        <p class="text-block fs-7 lh-lg">
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-          quae ab illo inventore veritatis et quasi architecto beatae vitae
-          dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-          aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-          eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
-          qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
-          sed quia non numquam eius modi tempora incidunt ut labore et dolore
-          magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis
-          nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-          aliquid ex ea commodi consequatur?
-        </p>
-        <button
-          class="btn btn-primary btn-primary--gradient px-5 py-2 sans-serif mt-3 rounded-0 fs-5 border-0 text-uppercase"
-        >
-          Read More
-        </button>
+      <div 
+        class="r-4 c-lg-4 c-1 c-se d-flex flex-lg-column me-lg-4 mb-7 justify-content-center justify-content-lg-end align-items-end h-100"
+      >
+        <div class="d-flex justify-content-end">
+          <button class="btn">
+            <img src="./img/Facebook.svg" />
+          </button>
+        </div>
+        <div class="d-flex justify-content-end">
+          <button class="btn">
+            <img src="./img/Instagram.svg" />
+          </button>
+        </div>
       </div>
-
-      <div id="social" class="position-absolute bottom-0 end-0 mx-3 my-3 d-flex flex-column">
-        <button class="row btn">
-          <img src="./img/Facebook.svg" />
-        </button>
-        <button class="row btn">
-          <img src="./img/Instagram.svg" />
-        </button>
-      </div>
-
     </main>
 
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js" defer></script>
-    <script src="./breakpoints.js" defer></script>
   </body>
 </html>
