@@ -8,9 +8,9 @@ const animationCard = document.getElementById("animation-card");
 const moreButtonImg = document.querySelector("#more-button > button > img");
 const closeButton = document.getElementById("close-button");
 
-// Create a span element from each letter in the heading to allow for a
-// left-to-right fade out
 (() => {
+  // Create a span element from each letter in the heading to allow for a
+  // left-to-right fade out
   let text = heading.textContent;
   heading.textContent = "";
   text.split('').forEach(letter => {
@@ -22,7 +22,7 @@ const closeButton = document.getElementById("close-button");
 
 moreButtonImg.addEventListener("click", () => {
   const duration = 0.25; 
-  setDurationProperty(animationCard, duration); 
+  setTimeProperty(animationCard, "--animation-duration", duration); 
   setCardAnimationAt("start", moreButtonImg);
   setCardAnimationAt("end", detailBox);
   hide(moreButtonImg.parentElement);
@@ -36,11 +36,13 @@ moreButtonImg.addEventListener("click", () => {
   fadeChildren(detailContent, "in", duration / 2, duration);
 });
 
-function setDurationProperty(element, duration) {
-  element.style.setProperty("--animation-duration", duration + 's');
+function setTimeProperty(element, property, duration) {
+  // Using custom properties in CSS to allow for manipulation of CSS animations
+  element.style.setProperty(property, duration + 's');
 }
 
 function setCardAnimationAt(location, node) {
+  // Set the position for the card animation to start or end at an existing node
   let borderRadius = node == moreButtonImg ? "100%" : 0;
   let { top, right, bottom, left, width, height } = getNodeProperties(node);
   animationCard.style.setProperty(`--${location}-top`, top + "px");
@@ -53,14 +55,15 @@ function setCardAnimationAt(location, node) {
 }
 
 function getNodeProperties(node) {
-  if (Array.from(node.classList).includes('d-none')) {
-    node.style.opacity = 0;
+  //Get the px values for the bounding rectangle
+  if (Array.from(node.classList).includes('d-none')) {                          //Need to display the element in order to get the bounding rectangle
+    node.style.opacity = 0;                                                     //Don't want to show the element yet
     node.classList.remove('d-none');
   }
   const { top, right, bottom, left } = node.getBoundingClientRect();
   const width = node.offsetWidth;
   const height = node.offsetHeight;
-  return { top, right, bottom, left, width, height, borderRadius: "100%" };
+  return { top, right, bottom, left, width, height };
 }
 
 function turnOff(element) {
@@ -73,7 +76,7 @@ function fadeHeading(fadeDirection, duration, delay) {
   if (fadeDirection == "out") {
     headingLetters.forEach(letter => {
       fade(letter, fadeDirection, duration, delay)
-      delay += 0.025;
+      delay += 0.025;                                                            //Slightly increase the delay on each letter to allow for a letter-at-a-time fade
     });
   } else {
     headingLetters.reverse().forEach(letter => {
@@ -83,15 +86,13 @@ function fadeHeading(fadeDirection, duration, delay) {
   }
 }
 
-function fade(element, fadeDirection, animationDuration, animationDelay) {
-  element.style.opacity = fadeDirection == "out" ? 1 : 0;
-  setTimeout(() => {
-    element.style.opacity = fadeDirection == "out" ? 0 : 1;
-    element.classList.remove(`fade-${fadeDirection}`)
-  }, (animationDuration + animationDelay) * 1000)
-  element.style.setProperty("--animation-duration", animationDuration + 's')
-  element.style.setProperty("--animation-delay", animationDelay + 's');
-  element.classList.add(`fade-${fadeDirection}`);
+function fade(element, fadeDirection, duration, delay) {
+  element.style.opacity = fadeDirection == "out" ? 1 : 0;                       //Make sure the beginning opacity is set correctly
+  setTimeout(() => element.style.opacity = fadeDirection == "out" ? 0 : 1,       //Don't want the element to pop back up after fading out
+             (duration + delay) * 1000)
+  setTimeProperty(element, "--animation-duration", duration)
+  setTimeProperty(element, "--animation-delay", delay);
+  addAnimationTo(element, `fade-${fadeDirection}`, duration, delay);
 }
 
 function addAnimationTo(element, animationClass, duration, delay) {
@@ -127,7 +128,7 @@ function fadeChildren(element, fadeDirection, duration, delay) {
 
 closeButton.addEventListener("click", () => {
   let duration = 0.25;
-  setDurationProperty(animationCard, duration);
+  setTimeProperty(animationCard, "--animation-duration", duration);
   setCardAnimationAt("start", detailBox);
   turnOn(moreButtonImg.parentElement);
   show(moreButtonImg.parentElement);
