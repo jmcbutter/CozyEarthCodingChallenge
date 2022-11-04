@@ -1,10 +1,11 @@
 $primary: #611818;
+$enable-negative-margins: true;
 
 @import '../node_modules/bootstrap/scss/functions';
 @import '../node_modules/bootstrap/scss/variables';
 
 
-$position-values: map-merge($position-values, (9: min(11%, 9.5rem),));
+$position-values: map-merge($position-values, (7: min(8%, 7rem), 9: min(11%, 9.5rem),));
 $display-font-sizes: map-merge($display-font-sizes, (1: 14rem));
 $spacers: map-merge($spacers, (6: $spacer * 4, 7: $spacer * 4.5));
 $font-sizes: map-merge($font-sizes, (7: $font-size-base * 0.75));
@@ -21,7 +22,7 @@ $utilities: map-merge(
       (
         values: map-merge(
           map-get(map-get($utilities, "width"), "values"),
-          (40: 40%),
+          (85: 85%),
         ),
       ),
     ),

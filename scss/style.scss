@@ -1,16 +1,25 @@
-@import "./bootstrapOverrides.scss";
+@import "./bootstrap-overrides.scss";
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+@import "./animations.scss";
 
 :root {
   font-size: calc(0.625em + 0.4vw)
 }
 
 body {
-  background: linear-gradient(90deg, $primary, $primary min(33%, 26rem), #FFF0 min(33%, 26rem)), 
+  background: linear-gradient(90deg, rgba($primary, 0.8), rgba($primary, 0.1)), 
               url(../img/Coding-Challenge-Image.png);
   background-size: cover;
-  min-height: 100vh;
+  height: 100vh;
+}
+
+@include media-breakpoint-up(lg) {
+  body {
+    background: linear-gradient(90deg, $primary, $primary min(33%, 26rem), #FFF0 min(33%, 26rem)), 
+                url(../img/Coding-Challenge-Image.png);
+    background-size: cover;
+  }
 }
 
 
@@ -39,4 +48,8 @@ body {
 
 .btn-primary--gradient {
   background: linear-gradient(90deg, $primary, #A36754);
+}
+
+.card {
+  display: none;
 }

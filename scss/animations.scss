@@ -1,0 +1,91 @@
+.animate-card {
+  content: "";
+  background-color: white;
+  border-radius: 100%;
+  position: absolute;
+
+  top: var(--end-top);
+  left: var(--end-left);
+  right: var(--end-right);
+  bottom: var(--end-bottom);
+  border-radius: var(--end-border-radius);
+  width: var(--end-width);
+  height: var(--end-height);
+
+  animation: var(--animation-duration) ease-in-out animateCard;
+}
+
+@keyframes animateCard {
+  from {
+    top: var(--start-top);
+    left: var(--start-left);
+    right: var(--start-right);
+    bottom: var(--start-bottom);
+    border-radius: var(--start-border-radius);
+    width: var(--start-width);
+    height: var(--start-height);
+  }
+
+  to {
+    top: var(--end-top);
+    left: var(--end-left);
+    right: var(--end-right);
+    bottom: var(--end-bottom);
+    border-radius: var(--end-border-radius);
+    width: var(--end-width);
+    height: var(--end-height);
+  }
+}
+
+.fade-in {
+  animation: var(--animation-duration) linear var(--animation-delay) fadeIn;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-out {
+  animation: var(--animation-duration) linear var(--animation-delay) fadeOut;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+// .fade-out-left {
+//   position: relative;
+//   &::before {
+//     content: "";
+//     position: absolute;
+//     top: 0;
+//     bottom: 0;
+//     left: 0%;
+//     width: 100%;
+//     background-color: white;
+//     animation: 2s linear fadeOutLeft;
+//   }
+//   animation: var(--animation-duration) linear fadeOutLeft;
+// }
+
+// @keyframes fadeOutLeft {
+//   from {
+//     width: 0%;
+//   }
+
+//   to {
+//     width: 100%;
+//   }
+// }
