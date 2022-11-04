@@ -8,17 +8,52 @@
 }
 
 body {
-  background: linear-gradient(90deg, rgba($primary, 0.9), rgba($primary, 0.1)),
-              -webkit-image-set(
-                url(../img/Coding-Challenge-Image-x1.png) 1x,
-                url(../img/Coding-Challenge-Image-x2.png) 2x);
-  background: linear-gradient(90deg, rgba($primary, 0.9), rgba($primary, 0.1)),
-              image-set(
-                url(../img/Coding-Challenge-Image-x1.png) 1x,
-                url(../img/Coding-Challenge-Image-x2.png) 2x);
+  background-image: -webkit-image-set(
+                      url(../img/Coding-Challenge-Image-x1.png) 1x,
+                      url(../img/Coding-Challenge-Image-x2.png) 2x);
+  background-image: image-set(                                                   /*linear-gradient(90deg, rgba($primary, 0.9), rgba($primary, 0.1)),*/
+                      url(../img/Coding-Challenge-Image-x1.png) 1x,
+                      url(../img/Coding-Challenge-Image-x2.png) 2x);
+  background: black;
   background-size: cover;
   height: 100vh;
 }
+
+.grid {
+  display: grid;
+
+  &-r3 {
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+}
+
+.r {
+  &1 {
+    grid-row-start: 1;
+  }
+
+  &2 {
+    grid-row-start: 2;
+  }
+
+  &3 {
+    grid-row-start: 3;
+  }
+
+  &s3 {
+    grid-row-end: span 3;
+  }
+}
+
+.z {
+  &1 {
+    z-index: 1;
+  }
+}
+
+
+
+
 
 .serif {
   font-family: 'Playfair Display', 'Times New Roman', Times, serif
@@ -51,16 +86,12 @@ body {
   width: fit-content;
 }
 
-@include media-breakpoint-up(lg) {
-  body {
-    background: linear-gradient(90deg, $primary, $primary min(34%, 27rem), #FFF0 min(33%, 27rem)), 
-                -webkit-image-set(
-                  url(../img/Coding-Challenge-Image-x1.png) 1x,
-                  url(../img/Coding-Challenge-Image-x2.png) 2x);
-    background: linear-gradient(90deg, $primary, $primary min(34%, 27rem), #FFF0 min(33%, 27rem)), 
-                image-set(
-                  url(../img/Coding-Challenge-Image-x1.png) 1x,
-                  url(../img/Coding-Challenge-Image-x2.png) 2x);
-    background-size: cover;
+@media screen and (min-width: 992px) {
+  .ch-shift {
+    &-left {
+      &-2 {
+        margin-left: -1.85ch;
+      }
+    }
   }
 }

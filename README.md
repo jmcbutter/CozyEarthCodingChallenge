@@ -40,7 +40,7 @@ issues with it later on, especially when dealing with media breakpoints. As most
 of the styling in Bootstrap is done via utility classes in HTML, I created a
 JavaScript file to manage classes based on screen size. It wasn't until the
 project was completed that I found more information within Bootstrap
-documentation that may have made things much simpler.
+documentation that may have made things somewhat simpler.
 
 Another interesting part of this project involved the animation of expanding the
 "More Details" button into a full details card. I eventually settled on creating
