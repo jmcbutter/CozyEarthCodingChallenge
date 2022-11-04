@@ -16,11 +16,12 @@ body {
 
 @include media-breakpoint-up(lg) {
   body {
-    background: linear-gradient(90deg, $primary, $primary min(33%, 26rem), #FFF0 min(33%, 26rem)), 
+    background: linear-gradient(90deg, $primary, $primary min(34%, 27rem), #FFF0 min(33%, 27rem)), 
                 url(../img/Coding-Challenge-Image.png);
     background-size: cover;
   }
 }
+
 
 
 .serif {
@@ -49,7 +50,6 @@ body {
 .btn-primary--gradient {
   background: linear-gradient(90deg, $primary, #A36754);
 }
-
-.card {
-  display: none;
+.content {
+  width: fit-content;
 }

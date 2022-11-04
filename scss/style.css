@@ -12616,7 +12616,7 @@ body {
 
 @media (min-width: 992px) {
   body {
-    background: linear-gradient(90deg, #611818, #611818 min(33%, 26rem), rgba(255, 255, 255, 0) min(33%, 26rem)), url(../img/Coding-Challenge-Image.png);
+    background: linear-gradient(90deg, #611818, #611818 min(34%, 27rem), rgba(255, 255, 255, 0) min(33%, 27rem)), url(../img/Coding-Challenge-Image.png);
     background-size: cover;
   }
 }
@@ -12645,8 +12645,8 @@ body {
   background: linear-gradient(90deg, #611818, #A36754);
 }
 
-.card {
-  display: none;
+.content {
+  width: fit-content;
 }
 
 /*# sourceMappingURL=style.css.map */

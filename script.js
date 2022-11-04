@@ -5,7 +5,7 @@ const moreDetailsContent = Array.from(moreDetailsBox.children);
 
 const animationCard = document.getElementById("animation-card");
 
-const moreButtonImg = document.querySelector("#more-button > img");
+const moreButtonImg = document.querySelector("#more-button > button > img");
 const closeButton = document.getElementById("close-button");
 
 // Create a span element from each letter in the heading to allow for a
