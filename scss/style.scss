@@ -2,6 +2,7 @@
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
 @import "./animations.scss";
+@import "./grid.scss";
 
 :root {
   font-size: calc(0.625em + 0.4vw)
@@ -19,71 +20,11 @@ body {
   height: 100vh;
 }
 
-.grid {
-  display: grid;
-
-  & > .row {
-    margin: 0;
-  }
-
-  &-c4 {
-    grid-template-columns: minmax(27%, 1fr) 1fr 1fr 1fr;
-  }
-
-  &-r4 {
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-  }
-}
-
-.r- {
-  &1 {
-    grid-row-start: 1;
-  }
-
-  &2 {
-    grid-row-start: 2;
-  }
-
-  &3 {
-    grid-row-start: 3;
-  }
-
-  &4 {
-    grid-row-start: 4;
-  }
-
-  &s2 {
-    grid-row-end: span 2;
-  }
-
-  &s4 {
-    grid-row-end: span 4;
-  }
-}
-
-.c- {
-  &1 {
-    grid-column-start: 1;
-  }
-
-  &2 {
-    grid-column-start: 2;
-  }
-
-  &se {
-    grid-column-end: end;
-  }
-}
-
 .z {
   &1 {
     z-index: 1;
   }
 }
-
-
-
-
 
 .serif {
   font-family: 'Playfair Display', 'Times New Roman', Times, serif
@@ -114,6 +55,7 @@ body {
 
 .content {
   width: fit-content;
+  height: fit-content;
 }
 
 @media screen and (min-width: 992px) {
@@ -122,42 +64,6 @@ body {
       &-2 {
         margin-left: -1.85ch;
       }
-    }
-  }
-
-  .r-lg- {
-    &1 {
-      grid-row-start: 1;
-    }
-  
-    &2 {
-      grid-row-start: 2;
-    }
-  
-    &3 {
-      grid-row-start: 3;
-    }
-  
-    &4 {
-      grid-row-start: 4;
-    }
-  
-    &s2 {
-      grid-row-end: span 2;
-    }
-  
-    &s4 {
-      grid-row-end: span 4;
-    }
-  }
-
-  .c-lg- {
-    &2 {
-      grid-column-start: 2;
-    }
-  
-    &sa {
-      grid-column-end: end;
     }
   }
 }

@@ -12604,18 +12604,6 @@ textarea.form-control-lg {
     opacity: 0;
   }
 }
-:root {
-  font-size: calc(0.625em + 0.4vw);
-}
-
-body {
-  background-image: -webkit-image-set(url(../img/Coding-Challenge-Image-x1.png) 1x, url(../img/Coding-Challenge-Image-x2.png) 2x);
-  background-image: image-set(url(../img/Coding-Challenge-Image-x1.png) 1x, url(../img/Coding-Challenge-Image-x2.png) 2x);
-  background: black;
-  background-size: cover;
-  height: 100vh;
-}
-
 .grid {
   display: grid;
 }
@@ -12658,6 +12646,50 @@ body {
   grid-column-end: end;
 }
 
+@media screen and (min-width: 992px) {
+  .r-lg-1 {
+    grid-row-start: 1;
+  }
+  .r-lg-2 {
+    grid-row-start: 2;
+  }
+  .r-lg-3 {
+    grid-row-start: 3;
+  }
+  .r-lg-4 {
+    grid-row-start: 4;
+  }
+  .r-lg-s2 {
+    grid-row-end: span 2;
+  }
+  .r-lg-s4 {
+    grid-row-end: span 4;
+  }
+  .c-lg-2 {
+    grid-column-start: 2;
+  }
+  .c-lg-4 {
+    grid-column-start: 4;
+  }
+  .c-lg-se {
+    grid-column-end: end;
+  }
+  .c-lg-s2 {
+    grid-column-end: span 2;
+  }
+}
+:root {
+  font-size: calc(0.625em + 0.4vw);
+}
+
+body {
+  background-image: -webkit-image-set(url(../img/Coding-Challenge-Image-x1.png) 1x, url(../img/Coding-Challenge-Image-x2.png) 2x);
+  background-image: image-set(url(../img/Coding-Challenge-Image-x1.png) 1x, url(../img/Coding-Challenge-Image-x2.png) 2x);
+  background: black;
+  background-size: cover;
+  height: 100vh;
+}
+
 .z1 {
   z-index: 1;
 }
@@ -12689,35 +12721,12 @@ body {
 
 .content {
   width: fit-content;
+  height: fit-content;
 }
 
 @media screen and (min-width: 992px) {
   .ch-shift-left-2 {
     margin-left: -1.85ch;
-  }
-  .r-lg-1 {
-    grid-row-start: 1;
-  }
-  .r-lg-2 {
-    grid-row-start: 2;
-  }
-  .r-lg-3 {
-    grid-row-start: 3;
-  }
-  .r-lg-4 {
-    grid-row-start: 4;
-  }
-  .r-lg-s2 {
-    grid-row-end: span 2;
-  }
-  .r-lg-s4 {
-    grid-row-end: span 4;
-  }
-  .c-lg-2 {
-    grid-column-start: 2;
-  }
-  .c-lg-sa {
-    grid-column-end: end;
   }
 }
 
