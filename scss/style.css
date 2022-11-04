@@ -12614,12 +12614,6 @@ body {
   height: 100vh;
 }
 
-@media (min-width: 992px) {
-  body {
-    background: linear-gradient(90deg, #611818, #611818 min(34%, 27rem), rgba(255, 255, 255, 0) min(33%, 27rem)), url(../img/Coding-Challenge-Image.png);
-    background-size: cover;
-  }
-}
 .serif {
   font-family: "Playfair Display", "Times New Roman", Times, serif;
 }
@@ -12647,6 +12641,13 @@ body {
 
 .content {
   width: fit-content;
+}
+
+@media (min-width: 992px) {
+  body {
+    background: linear-gradient(90deg, #611818, #611818 min(34%, 27rem), rgba(255, 255, 255, 0) min(33%, 27rem)), url(../img/Coding-Challenge-Image.png);
+    background-size: cover;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

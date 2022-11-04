@@ -1,7 +1,7 @@
 const title = document.getElementById("title");
 const heading = title.querySelector("h1");
-const moreDetailsBox = document.getElementById("more-details");
-const moreDetailsContent = Array.from(moreDetailsBox.children);
+const detailBox = document.getElementById("detail-box");
+const detailContent = Array.from(detailBox.children);
 
 const animationCard = document.getElementById("animation-card");
 
@@ -24,16 +24,16 @@ moreButtonImg.addEventListener("click", () => {
   const duration = 0.25; 
   setDurationProperty(animationCard, duration); 
   setCardAnimationAt("start", moreButtonImg);
-  setCardAnimationAt("end", moreDetailsBox);
+  setCardAnimationAt("end", detailBox);
   hide(moreButtonImg.parentElement);
   fadeHeading("out", 0.1, 0);
   addAnimationTo(animationCard, "animate-card", duration, 0);
   setTimeout(() => {
-    turnOn(moreDetailsBox);
+    turnOn(detailBox);
     turnOff(moreButtonImg.parentElement);
-    show(moreDetailsBox); }
+    show(detailBox); }
     , duration * 1000);
-  fadeChildren(moreDetailsContent, "in", duration / 2, duration);
+  fadeChildren(detailContent, "in", duration / 2, duration);
 });
 
 function setDurationProperty(element, duration) {
@@ -128,12 +128,12 @@ function fadeChildren(element, fadeDirection, duration, delay) {
 closeButton.addEventListener("click", () => {
   let duration = 0.25;
   setDurationProperty(animationCard, duration);
-  setCardAnimationAt("start", moreDetailsBox);
+  setCardAnimationAt("start", detailBox);
   turnOn(moreButtonImg.parentElement);
   show(moreButtonImg.parentElement);
   setCardAnimationAt("end", moreButtonImg);
   turnOn(title);
-  turnOff(moreDetailsBox);
+  turnOff(detailBox);
   fadeHeading("in", 0.1, 0);
   addAnimationTo(animationCard, "animate-card", duration, 0);
 });

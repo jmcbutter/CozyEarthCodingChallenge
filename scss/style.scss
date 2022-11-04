@@ -14,16 +14,6 @@ body {
   height: 100vh;
 }
 
-@include media-breakpoint-up(lg) {
-  body {
-    background: linear-gradient(90deg, $primary, $primary min(34%, 27rem), #FFF0 min(33%, 27rem)), 
-                url(../img/Coding-Challenge-Image.png);
-    background-size: cover;
-  }
-}
-
-
-
 .serif {
   font-family: 'Playfair Display', 'Times New Roman', Times, serif
 }
@@ -50,6 +40,15 @@ body {
 .btn-primary--gradient {
   background: linear-gradient(90deg, $primary, #A36754);
 }
+
 .content {
   width: fit-content;
+}
+
+@include media-breakpoint-up(lg) {
+  body {
+    background: linear-gradient(90deg, $primary, $primary min(34%, 27rem), #FFF0 min(33%, 27rem)), 
+                url(../img/Coding-Challenge-Image.png);
+    background-size: cover;
+  }
 }
